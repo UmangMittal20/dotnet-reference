@@ -1,0 +1,52 @@
+-------------------------------- VS Code Extensions --------------------------------
+C#
+C# Extensions
+Material Icon Theme
+Prettier - Code formatter
+-------------------------------- Nuget --------------------------------
+dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
+
+dotnet tool install --global dotnet-ef
+
+dotnet ef migrations add InitialMigrationMsg
+dotnet ef database update
+
+AutoMapper.Extensions.Microsoft.DependencyInjection
+Microsoft.EntityFrameworkCore.Design
+Microsoft.EntityFrameworkCore.SqlServer
+
+Microsoft.IdentityModel.Tokens
+System.IdentityModel.Tokens.Jwt
+Microsoft.AspNetCore.Authentication.JwtBearer
+
+-------------------------------- Appsettings.json --------------------------------
+"ConnectionStrings": {
+    "DefaultConnection": "Server=localhost\\SQLEXPRESS; Database=dotnet-rpg; Trusted_Connection=true;",
+    "SqliteConnection": "Data Source=dotnetrpg.db"
+  },
+  "AppSettings": {
+    "Token": "my top secret key"
+  },
+
+-------------------------------- Commands --------------------------------
+dotnet new webapi
+dotnet run
+dotnet watch
+dotnet new gitignore
+
+
+-------------------------------- Startup.cs --------------------------------
+services.AddAutoMapper(typeof(Startup));
+
+**********************************************
+Local SQL Server DB Connection - (LocalDb)\MSSQLLocalDB
+
+**********************************************
+Transfer NetCore3.1 App to Net5.0
+1. change the 'TargetFramework' in csproj file from 'netcoreapp3.1' to 'net5.0'
+2. dotnet list package   -> lists all the packages being used in project & their versions
+3. update each package one-by-one - use either NuGet or PM-console commands(i.e. dotnet add package XYZ)
+4. dotnet tool uninstall --global dotnet-ef
+5. dotnet tool install --global dotnet-ef
+
+ 
